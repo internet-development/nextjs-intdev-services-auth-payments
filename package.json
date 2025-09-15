@@ -1,0 +1,28 @@
+{
+  "name": "nextjs-intdev-services-auth-payments",
+  "description": "A starting repository for the Internet Development Studio team.",
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "next -p 10000",
+    "build": "next build",
+    "start": "PORT=10000 next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "^16.0.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "sass": "1.93.2"
+  },
+  "devDependencies": {
+    "@types/node": "^24.9.1",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}

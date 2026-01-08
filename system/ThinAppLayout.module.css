@@ -6,8 +6,10 @@
 
   border-left: 1px solid var(--theme-border);
   border-right: 1px solid var(--theme-border);
+}
 
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
+  .root {
     border-left: 0px;
     border-right: 0px;
   }

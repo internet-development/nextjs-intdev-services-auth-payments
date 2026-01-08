@@ -1,5 +1,5 @@
-import '@root/fonts.scss';
-import '@root/global.scss';
+import '@root/fonts.css';
+import '@root/global.css';
 
 import * as React from 'react';
 

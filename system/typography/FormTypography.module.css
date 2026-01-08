@@ -19,10 +19,10 @@
   display: block;
   text-align: left;
   margin-top: 1rem;
+}
 
-  &:first-child {
-    margin-top: 0px;
-  }
+.formParagraph:first-child {
+  margin-top: 0px;
 }
 
 .inputLabel {

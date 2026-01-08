@@ -22,14 +22,14 @@
   transform: scale(1);
   text-decoration: none;
   font-family: var(--font-family);
+}
 
-  &:visited {
-    color: var(--theme-button-text);
-  }
+.root:visited {
+  color: var(--theme-button-text);
+}
 
-  &:hover {
-    box-shadow: var(--theme-button-shadow-hover);
-  }
+.root:hover {
+  box-shadow: var(--theme-button-shadow-hover);
 }
 
 .loader {

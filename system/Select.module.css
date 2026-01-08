@@ -4,11 +4,12 @@
   background: var(--theme-background);
   border-radius: 4px;
   box-shadow: 0 0 0 1px var(--theme-border);
-  &:hover {
-    box-shadow:
-      0 0 0 1px var(--theme-border),
-      0 0 0 4px var(--theme-input-active);
-  }
+}
+
+.root:hover {
+  box-shadow:
+    0 0 0 1px var(--theme-border),
+    0 0 0 4px var(--theme-input-active);
 }
 
 .disabled {

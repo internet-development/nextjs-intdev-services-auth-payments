@@ -124,23 +124,23 @@ body.theme-light {
   --theme-box-shadow-modal: inset 0 0 0 1px var(--theme-border), 0 0 1px 4px rgba(0, 0, 0, 0.02);
   --theme-box-shadow-button: 0 1px 2px rgba(0, 0, 0, 0.15);
   --theme-box-shadow-button-hover: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
 
-  &::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-  }
-  &::-webkit-scrollbar {
-    background: transparent;
-  }
-  &::-webkit-scrollbar-track {
-    background: var(--theme-foreground);
-  }
-  &::-webkit-scrollbar-thumb {
-    background: var(--theme-foreground-secondary);
-  }
-  &::-webkit-scrollbar-thumb:hover {
-    background: var(--theme-foreground-secondary);
-  }
+body.theme-light::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+body.theme-light::-webkit-scrollbar {
+  background: transparent;
+}
+body.theme-light::-webkit-scrollbar-track {
+  background: var(--theme-foreground);
+}
+body.theme-light::-webkit-scrollbar-thumb {
+  background: var(--theme-foreground-secondary);
+}
+body.theme-light::-webkit-scrollbar-thumb:hover {
+  background: var(--theme-foreground-secondary);
 }
 
 body.theme-daybreak {
@@ -167,23 +167,23 @@ body.theme-daybreak {
   --theme-box-shadow-modal: inset 0 0 0 1px var(--color-daybreak-90);
   --theme-box-shadow-button: 0 0 0 rgba(0, 0, 0, 0.15);
   --theme-box-shadow-button-hover: 0 0px 0px 4px rgba(255, 255, 255, 0.2);
+}
 
-  &::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-  }
-  &::-webkit-scrollbar {
-    background: transparent;
-  }
-  &::-webkit-scrollbar-track {
-    background: var(--theme-foreground);
-  }
-  &::-webkit-scrollbar-thumb {
-    background: var(--theme-foreground-secondary);
-  }
-  &::-webkit-scrollbar-thumb:hover {
-    background: var(--theme-foreground-secondary);
-  }
+body.theme-daybreak::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+body.theme-daybreak::-webkit-scrollbar {
+  background: transparent;
+}
+body.theme-daybreak::-webkit-scrollbar-track {
+  background: var(--theme-foreground);
+}
+body.theme-daybreak::-webkit-scrollbar-thumb {
+  background: var(--theme-foreground-secondary);
+}
+body.theme-daybreak::-webkit-scrollbar-thumb:hover {
+  background: var(--theme-foreground-secondary);
 }
 
 body.theme-dark {
@@ -210,23 +210,23 @@ body.theme-dark {
   --theme-box-shadow-modal: inset 0 0 0 1px var(--color-gray-90);
   --theme-box-shadow-button: 0 0 0 rgba(0, 0, 0, 0.15);
   --theme-box-shadow-button-hover: 0 0px 0px 4px rgba(255, 255, 255, 0.2);
+}
 
-  &::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-  }
-  &::-webkit-scrollbar {
-    background: transparent;
-  }
-  &::-webkit-scrollbar-track {
-    background: var(--theme-foreground);
-  }
-  &::-webkit-scrollbar-thumb {
-    background: var(--theme-foreground-secondary);
-  }
-  &::-webkit-scrollbar-thumb:hover {
-    background: var(--theme-foreground-secondary);
-  }
+body.theme-dark::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+body.theme-dark::-webkit-scrollbar {
+  background: transparent;
+}
+body.theme-dark::-webkit-scrollbar-track {
+  background: var(--theme-foreground);
+}
+body.theme-dark::-webkit-scrollbar-thumb {
+  background: var(--theme-foreground-secondary);
+}
+body.theme-dark::-webkit-scrollbar-thumb:hover {
+  background: var(--theme-foreground-secondary);
 }
 
 body.theme-blue {
@@ -253,23 +253,23 @@ body.theme-blue {
   --theme-box-shadow-modal: inset 0 0 0 1px var(--theme-border);
   --theme-box-shadow-button: 0 0 0 rgba(0, 0, 0, 0.15);
   --theme-box-shadow-button-hover: 0 0px 0px 4px rgba(255, 255, 255, 0.2);
+}
 
-  &::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-  }
-  &::-webkit-scrollbar {
-    background: transparent;
-  }
-  &::-webkit-scrollbar-track {
-    background: var(--theme-foreground);
-  }
-  &::-webkit-scrollbar-thumb {
-    background: var(--theme-foreground-secondary);
-  }
-  &::-webkit-scrollbar-thumb:hover {
-    background: var(--theme-foreground-secondary);
-  }
+body.theme-blue::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+body.theme-blue::-webkit-scrollbar {
+  background: transparent;
+}
+body.theme-blue::-webkit-scrollbar-track {
+  background: var(--theme-foreground);
+}
+body.theme-blue::-webkit-scrollbar-thumb {
+  background: var(--theme-foreground-secondary);
+}
+body.theme-blue::-webkit-scrollbar-thumb:hover {
+  background: var(--theme-foreground-secondary);
 }
 
 body.theme-neon-green {
@@ -296,23 +296,23 @@ body.theme-neon-green {
   --theme-box-shadow-modal: inset 0 0 0 1px var(--theme-border);
   --theme-box-shadow-button: 0 0 0 rgba(0, 0, 0, 0.15);
   --theme-box-shadow-button-hover: 0 0px 0px 4px rgba(255, 255, 255, 0.2);
+}
 
-  &::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-  }
-  &::-webkit-scrollbar {
-    background: transparent;
-  }
-  &::-webkit-scrollbar-track {
-    background: var(--theme-foreground);
-  }
-  &::-webkit-scrollbar-thumb {
-    background: var(--theme-foreground-secondary);
-  }
-  &::-webkit-scrollbar-thumb:hover {
-    background: var(--theme-foreground-secondary);
-  }
+body.theme-neon-green::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+body.theme-neon-green::-webkit-scrollbar {
+  background: transparent;
+}
+body.theme-neon-green::-webkit-scrollbar-track {
+  background: var(--theme-foreground);
+}
+body.theme-neon-green::-webkit-scrollbar-thumb {
+  background: var(--theme-foreground-secondary);
+}
+body.theme-neon-green::-webkit-scrollbar-thumb:hover {
+  background: var(--theme-foreground-secondary);
 }
 
 #__next {

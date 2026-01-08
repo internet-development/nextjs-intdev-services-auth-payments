@@ -7,8 +7,8 @@
   overflow: visible;
   background: 1px solid var(--theme-background);
   pointer-events: none;
+}
 
-  > * {
-    pointer-events: auto;
-  }
+.modalBackground > * {
+  pointer-events: auto;
 }

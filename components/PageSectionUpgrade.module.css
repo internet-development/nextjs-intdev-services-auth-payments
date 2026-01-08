@@ -18,8 +18,10 @@
   justify-content: center;
   padding: 0px 24px 0px 24px;
   max-width: 768px;
+}
 
-  @media (max-width: 1248px) {
+@media (max-width: 1248px) {
+  .container {
     flex-wrap: wrap;
   }
 }
@@ -29,34 +31,35 @@
   width: 50%;
   border-left: 1px solid var(--theme-border);
   align-self: stretch;
+  border-bottom: transparent 1px solid;
+}
 
-  &:last-child {
+.column:last-child {
+  border-right: 1px solid var(--theme-border);
+}
+
+@media (max-width: 1248px) {
+  .column {
+    width: 50%;
+  }
+  .column:nth-child(even) {
     border-right: 1px solid var(--theme-border);
   }
+}
 
-  border-bottom: transparent 1px solid;
-
-  @media (max-width: 1248px) {
-    width: 50%;
-    &:nth-child(even) {
-      border-right: 1px solid var(--theme-border);
-    }
-  }
-
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
+  .column {
     width: 100%;
     border-right: 1px solid var(--theme-border);
-
-    &:nth-child(1) {
-      border-bottom: 1px solid var(--theme-border);
-    }
-    &:nth-child(2) {
-      border-bottom: 1px solid transparent;
-    }
-
-    &:last-child {
-      border-bottom: 0px solid var(--theme-border);
-    }
+  }
+  .column:nth-child(1) {
+    border-bottom: 1px solid var(--theme-border);
+  }
+  .column:nth-child(2) {
+    border-bottom: 1px solid transparent;
+  }
+  .column:last-child {
+    border-bottom: 0px solid var(--theme-border);
   }
 }
 
@@ -71,15 +74,15 @@
 .link {
   color: var(--theme-text);
   transition: 200ms ease all;
+}
 
-  &:visited {
-    color: var(--theme-text);
-  }
+.link:visited {
+  color: var(--theme-text);
+}
 
-  &:hover {
-    color: var(--theme-text);
-    opacity: 0.8;
-  }
+.link:hover {
+  color: var(--theme-text);
+  opacity: 0.8;
 }
 
 
@@ -91,15 +94,15 @@
 .subRowContent {
   padding: 24px 24px 48px 24px;
   border-left: 1px solid var(--theme-border);
+}
 
-  &:last-child {
-    border-right: 1px solid var(--theme-border);
-  }
+.subRowContent:last-child {
+  border-right: 1px solid var(--theme-border);
+}
 
-  p {
-    opacity: 0.5;
-    max-width: 768px;
-  }
+.subRowContent p {
+  opacity: 0.5;
+  max-width: 768px;
 }
 
 .disclaimer {

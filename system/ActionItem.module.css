@@ -5,20 +5,19 @@
   text-decoration: none;
   cursor: pointer;
   color: var(--theme-text);
-
-  &:visited {
-    color: var(--theme-text);
-  }
-
-  &:hover {
-    color: var(--theme-primary);
-  }
-
   border-top: 1px solid var(--theme-border);
+}
 
-  &:last-child {
-    border-bottom: 1px solid var(--theme-border);
-  }
+.item:visited {
+  color: var(--theme-text);
+}
+
+.item:hover {
+  color: var(--theme-primary);
+}
+
+.item:last-child {
+  border-bottom: 1px solid var(--theme-border);
 }
 
 .icon {

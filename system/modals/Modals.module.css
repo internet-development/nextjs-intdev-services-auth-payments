@@ -19,8 +19,10 @@
   box-sizing: content-box;
   animation: slideInAnimation 200ms;
   animation-fill-mode: forwards;
+}
 
-  @media (max-width: 960px) {
+@media (max-width: 960px) {
+  .hamburgerModal {
     width: 100%;
   }
 }
@@ -88,14 +90,14 @@
   user-select: none;
   transition: 200ms ease all;
   font-family: var(--font-family-controls);
+}
 
-  &:visited {
-    color: var(--theme-text);
-  }
+.item:visited {
+  color: var(--theme-text);
+}
 
-  &:hover {
-    opacity: 0.6;
-  }
+.item:hover {
+  opacity: 0.6;
 }
 
 .wideFlexibleModal {
@@ -123,14 +125,14 @@
   padding: 4px 16px 4px 16px;
   color: var(--theme-text);
   text-decoration: none;
+}
 
-  &:visited {
-    color: var(--theme-text);
-  }
+.wideFlexibleModalColumnItem:visited {
+  color: var(--theme-text);
+}
 
-  &:hover {
-    color: var(--theme-text);
-  }
+.wideFlexibleModalColumnItem:hover {
+  color: var(--theme-text);
 }
 
 .menuContent {

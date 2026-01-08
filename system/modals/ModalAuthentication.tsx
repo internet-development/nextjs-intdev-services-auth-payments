@@ -1,4 +1,4 @@
-import styles from '@system/modals/Modals.module.scss';
+import styles from '@system/modals/Modals.module.css';
 
 import * as Constants from '@common/constants';
 import * as Queries from '@common/queries';

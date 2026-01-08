@@ -1,4 +1,4 @@
-import styles from '@system/ActionItem.module.scss';
+import styles from '@system/ActionItem.module.css';
 
 import * as React from 'react';
 

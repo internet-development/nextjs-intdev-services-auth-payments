@@ -47,10 +47,10 @@
   display: block;
   text-decoration: none;
   color: var(--theme-text);
+}
 
-  &:visited {
-    color: var(--theme-text);
-  }
+.p:visited {
+  color: var(--theme-text);
 }
 
 .title {
@@ -66,10 +66,10 @@
   display: block;
   text-decoration: none;
   color: var(--theme-text);
+}
 
-  &:visited {
-    color: var(--theme-text);
-  }
+.text:visited {
+  color: var(--theme-text);
 }
 
 .subTitle {
@@ -88,10 +88,10 @@
   line-height: var(--type-scale-fixed-small);
   text-decoration: none;
   color: var(--theme-text);
+}
 
-  &:visited {
-    color: var(--theme-text);
-  }
+.subText:visited {
+  color: var(--theme-text);
 }
 
 .unitLabel {

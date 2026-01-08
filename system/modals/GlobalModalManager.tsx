@@ -1,4 +1,4 @@
-import styles from './GlobalModalManager.module.scss';
+import styles from './GlobalModalManager.module.css';
 
 import * as React from 'react';
 

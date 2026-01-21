@@ -17,7 +17,7 @@ export const OAUTH_REDIRECT_SIGNATURE = `REDIRECT_PAYMENTS_INTERNET_DEV`;
 
 export const LINKS = {
   PAYING: 'https://buy.stripe.com/28og0B2f9eIj8Io9AA',
-  GENERAL_CO_WORKING: 'https://buy.stripe.com/7sI7u5f1V2ZB1fW145',
+  GENERAL_CO_WORKING: 'https://buy.stripe.com/14A3cugRqaR99AQd0y6Zy04',
   PARTNER: 'https://buy.stripe.com/8wMaGh6vp43F5wccMO',
 };
 
@@ -34,13 +34,13 @@ export const Users = {
 
 export const Tiers = {
   PAYING: 899,
-  GENERAL_CO_WORKING: 32900,
+  GENERAL_CO_WORKING: 40400,
   PARTNER: 279000,
 };
 
 export const Payments = {
   899: 'PAYING',
-  32900: 'GENERAL_CO_WORKING',
+  40400: 'GENERAL_CO_WORKING',
   279000: 'PARTNER',
 };
 

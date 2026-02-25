@@ -19,8 +19,6 @@ function ExampleAuthenticationPage(props) {
   const [currentUser, setUser] = React.useState<Record<string, any> | null>(props.viewer);
   const modals = useModals();
 
-  console.log(props.method);
-
   const isVerified = props.viewer && Number(props.viewer.level) >= Constants.Users.tiers.VERIFIED;
   const isPaying = props.viewer && Number(props.viewer.level) >= Constants.Users.tiers.PAYING;
   const isOffice = props.viewer && Number(props.viewer.level) >= Constants.Users.tiers.GENERAL_CO_WORKING;

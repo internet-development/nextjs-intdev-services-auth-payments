@@ -1,5 +1,9 @@
 export const MAX_SIZE_BYTES = 15728640;
 
+export const COOKIE_NAME = 'sitekey';
+
+export const PASSWORD_RESET_SOURCE = 'wireframes.internet.dev';
+
 export const API = `https://api.internet.dev/api`;
 // NOTE(jimmylee):
 // https://github.com/internet-development/apis

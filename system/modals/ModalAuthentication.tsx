@@ -47,7 +47,7 @@ const ModalAuthentication: ModalComponent<ModalAuthenticationProps> = (props) =>
                   return;
                 }
 
-                Cookies.remove('sitekey');
+                Cookies.remove(Constants.COOKIE_NAME);
                 window.location.reload();
               }}
               style={{ marginTop: 24, width: '100%' }}
@@ -98,15 +98,15 @@ const ModalAuthentication: ModalComponent<ModalAuthenticationProps> = (props) =>
               setLoading(true);
               const response = await Queries.onPublicUserAuthenticate({ email, password });
               setLoading(false);
-              if (!response) {
-                alert('Something went wrong. This is also a lazy message. Ideally the error message would have told you that you forgot to put your email or password.');
+              if (!response || response.error) {
+                alert(response?.message || 'Something went wrong.');
                 return;
               }
-              Cookies.remove('sitekey');
+              Cookies.remove(Constants.COOKIE_NAME);
 
               const confirm = window.confirm('Would you like to save your Cookie to maintain a session?');
               if (confirm) {
-                Cookies.set('sitekey', response.user.key, { secure: true });
+                Cookies.set(Constants.COOKIE_NAME, response.user.key, { secure: true });
               }
 
               props.onClose();

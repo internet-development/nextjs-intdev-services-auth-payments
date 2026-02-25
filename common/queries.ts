@@ -19,7 +19,7 @@ export async function getData({ route, key, body }, qualifier = 'data') {
   }
 
   if (result.error) {
-    return null;
+    return result;
   }
 
   if (!result[qualifier]) {
@@ -97,7 +97,7 @@ export async function onPublicUserAuthenticate({ email, password }) {
 
 export async function onPublicUserForgotPassword({ email }) {
   const route = `${Constants.API}/users/reset-password`;
-  const body = { email, source: 'wireframes.internet.dev' };
+  const body = { email, source: Constants.PASSWORD_RESET_SOURCE };
   return getData({ route, key: null, body }, 'success');
 }
 
@@ -154,6 +154,156 @@ export async function onUserListThreads({ key, orderBy }) {
   const body = { orderBy };
   return getData({ route, key, body });
 }
+
+// ---
+// Email verification
+// ---
+
+export async function onUserVerifyEmail({ code, source }) {
+  const route = `${Constants.API}/users/verify`;
+  const body = { code, source };
+  return getData({ route, key: null, body }, 'success');
+}
+
+export async function onUserVerifyResend({ key, source }) {
+  const route = `${Constants.API}/users/verify-resend`;
+  const body = { source };
+  return getData({ route, key, body }, 'emailed');
+}
+
+// ---
+// Username
+// ---
+
+export async function onSetUsername({ key, username }) {
+  const route = `${Constants.API}/users/update-viewer-username`;
+  const body = { username };
+  return getData({ route, key, body });
+}
+
+// ---
+// Credits
+// ---
+
+export async function onGetCreditsBalance({ key }) {
+  const route = `${Constants.API}/credits/balance`;
+  const body = {};
+  return getData({ route, key, body }, 'balance');
+}
+
+export async function onGetCreditsPricing() {
+  const route = `${Constants.API}/credits/pricing`;
+  const body = {};
+  return getData({ route, key: null, body }, 'routes');
+}
+
+export async function onSendCredits({ key, email, username, amount }) {
+  const route = `${Constants.API}/credits/send`;
+  const body = { email, username, amount };
+  return getData({ route, key, body });
+}
+
+export async function onGetCreditsTransactions({ key }) {
+  const route = `${Constants.API}/credits`;
+  const body = {};
+  return getData({ route, key, body });
+}
+
+// ---
+// Organizations
+// ---
+
+export async function onGetAllOrganizations({ key }) {
+  const route = `${Constants.API}/organizations`;
+  const body = {};
+  return getData({ route, key, body });
+}
+
+export async function onGetViewerOrganizations({ key }) {
+  const route = `${Constants.API}/users/viewer/organizations`;
+  const body = {};
+  return getData({ route, key, body });
+}
+
+export async function onOrganizationCreate({ key, domain }) {
+  const route = `${Constants.API}/organizations/create`;
+  const body = { domain };
+  return getData({ route, key, body });
+}
+
+export async function onOrganizationAddUser({ key, email, domain }) {
+  const route = `${Constants.API}/organizations/users/add`;
+  const body = { email, domain };
+  return getData({ route, key, body });
+}
+
+// ---
+// Likes
+// ---
+
+export async function onCreateLike({ key, entity_id, data }) {
+  const route = `${Constants.API}/likes/create`;
+  const body = { entity_id, data };
+  return getData({ route, key, body });
+}
+
+export async function onDeleteLike({ key, id }) {
+  const route = `${Constants.API}/likes/delete`;
+  const body = { id };
+  return getData({ route, key, body });
+}
+
+export async function onGetViewerLikes({ key }) {
+  const route = `${Constants.API}/users/viewer/likes`;
+  const body = {};
+  return getData({ route, key, body });
+}
+
+// ---
+// Events
+// ---
+
+export async function onGetEvents({ key, domain }) {
+  const route = `${Constants.API}/events`;
+  const body = { domain };
+  return getData({ route, key, body });
+}
+
+export async function onCreateEvent({ key, domain, begins_at, ends_at, visibility, data }) {
+  const route = `${Constants.API}/events/create`;
+  const body = { domain, begins_at, ends_at, visibility, data };
+  return getData({ route, key, body });
+}
+
+export async function onDeleteEvent({ key, id }) {
+  const route = `${Constants.API}/events/delete`;
+  const body = { id };
+  return getData({ route, key, body });
+}
+
+// ---
+// Subscriptions
+// ---
+
+export async function onGetSubscriptions() {
+  const route = `${Constants.API}/users/subscriptions`;
+  const body = {};
+  return getData({ route, key: null, body });
+}
+
+// ---
+// Public user lookup
+// ---
+
+export async function onGetPublicUserByUsername({ username }) {
+  const route = `${Constants.API}/users/public/get-by-username`;
+  const body = { username };
+  return getData({ route, key: null, body });
+}
+
+// ---
+// File uploads
+// ---
 
 export async function onUserUploadDataGCS({ domain, file, key }) {
   let signedResult;

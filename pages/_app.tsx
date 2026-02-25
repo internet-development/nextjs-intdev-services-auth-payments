@@ -7,7 +7,7 @@ import Providers from '@components/Providers';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Providers>
+    <Providers viewer={pageProps.viewer} sessionKey={pageProps.sessionKey}>
       <Component {...pageProps} />
     </Providers>
   );

@@ -1,5 +1,6 @@
 import styles from '@system/modals/Modals.module.css';
 
+import * as Constants from '@common/constants';
 import * as Queries from '@common/queries';
 import * as React from 'react';
 import * as Utilities from '@common/utilities';
@@ -43,7 +44,7 @@ const ModalForgotPassword: ModalComponent<ModalAuthenticationProps> = (props) =>
                   return;
                 }
 
-                Cookies.remove('sitekey');
+                Cookies.remove(Constants.COOKIE_NAME);
                 window.location.reload();
               }}
               style={{ marginTop: 24, width: '100%' }}
@@ -76,9 +77,9 @@ const ModalForgotPassword: ModalComponent<ModalAuthenticationProps> = (props) =>
             onClick={async () => {
               setLoading(true);
               const response = await Queries.onPublicUserForgotPassword({ email });
-              if (!response) {
+              if (!response || response.error) {
                 setLoading(false);
-                alert('Something went wrong. This is also a lazy message. Ideally the error message would have told you that you forgot to put your email or password.');
+                alert(response?.message || 'Something went wrong.');
                 return;
               }
 

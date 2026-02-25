@@ -37,8 +37,8 @@ export default function PageSectionUpgrade(props) {
                 }
 
                 const response = await Queries.onSendAmountCents({ amount: 1000, key: props.sessionKey });
-                if (!response) {
-                  alert('Payment failed');
+                if (!response || response.error) {
+                  alert(response?.message || 'Payment failed');
                   return;
                 }
 
@@ -165,7 +165,7 @@ export default function PageSectionUpgrade(props) {
                       return;
                     }
 
-                    Cookies.remove('sitekey');
+                    Cookies.remove(Constants.COOKIE_NAME);
                     window.location.reload();
                   }}
                 >

@@ -1,3 +1,4 @@
+import * as Constants from '@common/constants';
 import * as Utilities from '@common/utilities';
 
 import AESModule from '@modules/aes';
@@ -87,11 +88,11 @@ export const cors = initMiddleware(
 
 export async function setup(context): Promise<{ sessionKey?: any; viewer?: Record<string, any> | null }> {
   let viewer = null;
-  let sessionKey = context.req.cookies['sitekey'] || '';
+  let sessionKey = context.req.cookies[Constants.COOKIE_NAME] || '';
 
   if (!Utilities.isEmpty(sessionKey)) {
     try {
-      const response = await fetch('https://api.internet.dev/api/users/viewer', {
+      const response = await fetch(`${Constants.API}/users/viewer`, {
         method: 'PUT',
         headers: { 'X-API-KEY': sessionKey, 'Content-Type': 'application/json' },
       });
@@ -110,7 +111,7 @@ export async function tryKeyWithoutCookie(key): Promise<{ sessionKey?: any; view
 
   if (!Utilities.isEmpty(key)) {
     try {
-      const response = await fetch('https://api.internet.dev/api/users/viewer', {
+      const response = await fetch(`${Constants.API}/users/viewer`, {
         method: 'PUT',
         headers: { 'X-API-KEY': key, 'Content-Type': 'application/json' },
       });

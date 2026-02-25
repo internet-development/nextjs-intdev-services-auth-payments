@@ -1,3 +1,4 @@
+import * as Constants from '@common/constants';
 import * as React from 'react';
 import * as Utilities from '@common/utilities';
 import * as Server from '@common/server';
@@ -10,7 +11,7 @@ function OAuthPage(props) {
       window.location.replace('/');
     }
 
-    Cookies.set('sitekey', props.code, { secure: true });
+    Cookies.set(Constants.COOKIE_NAME, props.code, { secure: true });
     // NOTE(jimmylee)
     // After success this is where we redirect you to.
     window.location.replace(`/`);

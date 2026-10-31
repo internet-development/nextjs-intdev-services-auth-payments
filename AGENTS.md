@@ -16,7 +16,8 @@ This is the recommended starting point for new projects. Clone it, configure you
 
 - **Next.js** ^16 with Pages Router
 - **React** ^19 with function components
-- **TypeScript** ^5.9 (strict mode off, strictNullChecks on)
+- **TypeScript** 7.0.2, pinned (strict mode off, strictNullChecks on)
+- **Node.js** >=20.9.0 (Next.js minimum; `.github/build.yml` uses 26 LTS)
 - **CSS Modules** (`.module.css`) for component-scoped styling
 - **No state management library** — React Context + local state only
 - **No database or ORM** — all data persists on the backend API
@@ -39,7 +40,9 @@ pages/                  → Next.js pages (file-based routing)
 components/             → Page-level feature components
   ├── Page.tsx          → SEO/meta tag wrapper
   ├── PageSectionUpgrade.tsx → Pricing tiers + payment UI
-  └── Providers.tsx     → Context providers wrapper
+  ├── Providers.tsx     → Context providers wrapper
+  ├── InternetDevelopmentLogo.tsx     → Logo
+  └── InternetDevelopmentLogoMark.tsx → Logo mark
 system/                 → Reusable design system components
   ├── Button.tsx        → Button (visual, loading, href variants)
   ├── Input.tsx         → Text input
@@ -50,6 +53,7 @@ system/                 → Reusable design system components
   ├── Loader.tsx        → Loading spinner
   ├── Navigation.tsx    → Top navigation bar
   ├── ThinAppLayout.tsx → Minimal app layout wrapper
+  ├── ViewerContext.tsx → `useViewer()` context for viewer and session key
   ├── modals/           → Modal system
   │   ├── GlobalModalManager.tsx  → Modal renderer
   │   ├── ModalContext.tsx        → Modal state (React Context)
@@ -76,7 +80,7 @@ modules/                → Low-level utility modules
   ├── object-assign.ts  → Object utilities
   └── vary.ts           → HTTP Vary header handling
 public/                 → Static assets (favicons, app icon)
-.github/                → CI/CD workflows (build, deploy, DNS verification)
+.github/                → CI/CD definitions (build, deploy, DNS verification); not active, because GitHub only runs workflows from `.github/workflows/`
 ```
 
 ---
@@ -546,10 +550,15 @@ npm install          # Install dependencies
 npm run dev          # Dev server on port 10000
 npm run build        # Production build
 npm start            # Production server on port 10000
-npm run lint         # Run Next.js linter
+npm run typecheck    # Type-check with tsc
 ```
 
 Port 10000 is used for Render.com compatibility.
+
+- `npm run build` also type-checks, using the project's `tsc` CLI. TypeScript 7 has no JavaScript compiler API.
+- There is no linter: Next.js 16 removed `next lint`, and ESLint is not a dependency.
+- `ts-node` is in `devDependencies` but does not run with TypeScript 7, and nothing in this repository uses it.
+- `package-lock.json` is git-ignored. `npm audit` needs one, and `npm install` creates it.
 
 ---
 
@@ -603,3 +612,13 @@ export async function onGetCreditsBalance({ key }) {
 8. **Server-side auth** — Use `getServerSideProps` with `Server.setup()` for session handling
 9. **Theme-aware styling** — Use CSS custom properties (`--theme-*`) for all colors
 10. **API-first architecture** — No local database; all data flows through `api.internet.dev`
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+## This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->

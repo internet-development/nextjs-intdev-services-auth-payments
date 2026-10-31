@@ -13,6 +13,7 @@ node_modules
 dist
 analytics.txt
 package-lock.json
+*.tsbuildinfo
 
 /**/*/.DS_STORE
 /**/*/node_modules

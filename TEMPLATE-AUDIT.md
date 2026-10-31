@@ -18,7 +18,7 @@ Anything that is fixed in here should be removed from the list.
 | Developer ergonomics    | 75%   | `useViewer()` hook available, cookie name centralized                    |
 | Code hygiene            | 95%   | Hardcoded strings moved to constants, debug logs removed, CI updated     |
 | Documentation           | 88%   | AGENTS.md + README now comprehensive                                     |
-| Deployment readiness    | 90%   | CI matches runtime Node version, `.env.example` present                  |
+| Deployment readiness    | 90%   | CI definitions target Node 26 LTS, `.env.example` present                |
 
 ---
 
@@ -221,7 +221,7 @@ These would make the template demonstrate the full user lifecycle: sign up → v
 | Production build      | Works      | `npm run build` succeeds                             |
 | Port configuration    | 10000      | Render.com compatible                                |
 | Environment variables | 2 required | Simple, `.env.example` provided                      |
-| CI/CD                 | Exists     | GitHub Actions for build, deploy, DNS (Node 18)      |
+| CI/CD                 | Inactive   | Definitions in `.github/`, not `.github/workflows/`  |
 | Static assets         | Present    | Favicons, app icon                                   |
 | SEO                   | Basic      | `<Page>` component sets meta tags                    |
 | CORS                  | Configured | API routes have CORS middleware                      |

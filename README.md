@@ -13,7 +13,7 @@ The official starter template for building applications on the [Internet Develop
 
 ### Setup
 
-Requires Node.js >= 18.
+Requires Node.js >= 20.9.
 
 ```sh
 git clone https://github.com/internet-development/nextjs-intdev-services-auth-payments.git
@@ -43,7 +43,7 @@ Open `http://localhost:10000`.
 | `npm run dev` | Development server on port 10000 |
 | `npm run build` | Production build |
 | `npm start` | Production server on port 10000 |
-| `npm run lint` | Run Next.js linter |
+| `npm run typecheck` | Type-check with `tsc` (`npm run build` also type-checks) |
 
 ### Architecture
 
